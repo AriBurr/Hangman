@@ -1,0 +1,74 @@
+
+body {
+  padding-top: 0px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 0px;
+  }
+}
+.card {
+  height: 100%;
+}
+/*=========Hangman content==========*/
+
+
+.hang-content{
+  height: 290px;
+}
+
+.my-4{
+  padding: 10px 32px;
+}
+.hang-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr 1fr 1fr
+}
+.hang-wrapper div{
+  justify-self: center;
+  align-self: center;
+  font-size: 50px;
+  color: red;
+}
+
+.incorrect-guess{
+  visibility: hidden;
+}
+
+/*============Keyword display===========*/
+.display-key{
+  height: 100px;
+  padding-bottom: 25px;
+  /*display: inline-block;*/
+}
+
+.divDisplay{
+
+  display: inline-block;
+  border-bottom: 2px solid black;
+  padding: 7px 20px 0 20px;
+  margin: auto 10px;
+  font-size: 42px;
+}
+.fontDisplay{
+  visibility: hidden;
+}
+
+
+
+/*=======buttons/input=========*/
+.input-box{
+  height: 100px;
+  margin-bottom: 30px;
+}
+form{
+  padding: 28px;
+}
+form input{
+  margin-right: 30px;
+}
+form button{
+  margin-right: 180px;
+}

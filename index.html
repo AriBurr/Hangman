@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Heroic Features - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/styles.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Jumbotron Header -->
+      <header class="jumbotron my-4">
+        <h1 class="display-3">The Hangman Game!</h1>
+        <p class="lead">Guess a letter. Hope you guess correctly. If not, you will slowly be hangged.  Good luck!</p>
+      </header>
+
+      <!-- Page Features -->
+      <div class="row text-center">
+
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="card hang-content hang-wrapper">
+            <div class="incorrect-guess">X</div>
+            <div class="incorrect-guess">X</div>
+            <div class="incorrect-guess">X</div>
+            <div class="incorrect-guess">X</div>
+            <div class="incorrect-guess">X</div>
+            <div class="incorrect-guess">X</div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="card hang-content">
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- another row -->
+
+      <div class="row text-center display-key">
+        <div class="col-lg-12">
+          <div class="card">
+            <div id="display-key-word">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /.row -->
+      <div class="row text-right input-box">
+        <div class="col-lg-12">
+          <div class="card form">
+            <form class="submit" action="index.html" method="post">
+
+              <input id="guess" type="text" name="sumbit" maxlength="1" placeholder="Guess a letter!">
+              <button id="submit-guess" class="btn btn-primary">Guess</button>
+
+              <input id="final" type="text" name="sumbit"  placeholder="Guess the word!">
+              <button id="submit-final" class="btn btn-danger">Final Guess</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Hangman Game 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+
+  </body>
+
+</html>
