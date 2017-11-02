@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Heroic Features - Start Bootstrap Template</title>
+    <title>Hangman Game</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
         <h1 class="display-3">The Hangman Game!</h1>
-        <p class="lead">Guess a letter. Hope you guess correctly. If not, you will slowly be hangged.  Good luck!</p>
+        <p class="lead">Guess a letter. Hope you guess correctly. If not, you will slowly be hanged. Good luck!</p>
       </header>
 
       <!-- Page Features -->
@@ -45,7 +45,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6 mb-4">
-          <div class="card hang-content">
+          <div class="card hang-content" id="win-lose">
 
           </div>
         </div>
@@ -75,6 +75,8 @@
 
               <input id="final" type="text" name="sumbit"  placeholder="Guess the word!">
               <button id="submit-final" class="btn btn-danger">Final Guess</button>
+
+              <button id="reset" class="btn btn-primary">Reset</button>
 
             </form>
           </div>

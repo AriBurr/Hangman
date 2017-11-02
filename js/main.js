@@ -1,15 +1,8 @@
 $(document).ready(function(){
-  //keyword fits with 14 characters without overflow
-  keyword = "constantinple"
-  keyword_chars = keyword.split("");
-  var wrong_counter = 0;
-  display_chars(keyword_chars);
-  guess_action(keyword_chars, wrong_counter);
+  start();
 });
 
-
-
-function display_chars(key){
+function displayChars(key){
   //grab each character from keyword
   key.forEach(function(val){
     //the divs to be displayed
@@ -19,46 +12,80 @@ function display_chars(key){
   });
 }
 
-function guess_action(key, wrong){
+function guessAction(key){
+
+  var guessRightCounter = 0;
+  var guessWrongCounter = 0;
+
   //when guess button is clicked
   $("#submit-guess").on("click", function(e){
     var guess = $("#guess").val();
     e.preventDefault();
 
     //function call checks if guess is correct
-    array = guess_check(guess, key);
-
+    array = guessCheck(guess, key);
     //loops through the correctly guessed array of indexes
     array.forEach(function(val){
       //takes index and shows corresponding div
       $("#display-key-word div:nth-child(" + (val + 1) + ")").children().removeClass("fontDisplay");
+      $("#win-lose").html("<h1> Got one! </h1>");
+      guessRightCounter++;
+      win(guessRightCounter);
     });
     //checking if there where any correct guesses
     if(array.length === 0){
       //function that displays wrong counter
-      $(".hang-wrapper div:nth-of-type(" + (wrong + 1) + ")").removeClass("incorrect-guess");
+      $(".hang-wrapper div:nth-of-type(" + (guessWrongCounter + 1) + ")").removeClass("incorrect-guess");
       //if wrong than
-      wrong++;
+      $("#win-lose").html("<h1> Try again! </h1>");
+      guessWrongCounter++;
+      lose(guessWrongCounter);
     }
 
     $("#guess").val("");
+
   });
 
 }
 
 //checks if guess is inside key, if so, returns array of indexes that correspond to keyword
-function guess_check(guess, key){
-  index_key = [];
+function guessCheck(guess, key){
+  indexKey = [];
   key.forEach(function(val, index){
     if(guess === val){
-      index_key.push(index);
+      indexKey.push(index);
     }
   });
-  return index_key;
+  return indexKey;
 }
 
-function lose(wrong){
-  if(wrong >= 6){
-    alert("You lose!");
+function lose(guessWrong){
+  if(guessWrong === 6){
+    $("#win-lose").html("<h1> You lose! </h1>");
   }
+}
+
+function win(guessRight){
+  if(guessRight === keywordChars.length){
+    $("#win-lose").html("<h1> You win! </h1>");
+  }
+}
+
+function start(){
+  randomWord();
+  displayChars(keywordChars);
+  guessAction(keywordChars);
+}
+
+function reset(){
+  $("#reset").on("click", function(e){
+    start();
+  });
+}
+
+function randomWord(){
+$.get( "http://setgetgo.com/randomword/get.php", function( data ) {
+  var word = data;
+  keywordChars = word.split("");
+});
 }
