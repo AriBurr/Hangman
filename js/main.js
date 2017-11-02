@@ -1,6 +1,5 @@
 $(document).ready(function(){
-  randomWord();
-
+  start();
 });
 
 function displayChars(key){
@@ -72,24 +71,17 @@ function win(guessRight){
   }
 }
 
-function start(keywordChars){
-
-  displayChars(keywordChars);
-  guessAction(keywordChars);
-}
-
 function reset(){
   $("#reset").on("click", function(e){
     start();
   });
 }
 
-function randomWord(){
+function start(){
   $.get( "http://setgetgo.com/randomword/get.php", function( data ) {
-    console.log(data);
     var word = data;
     keywordChars =  word.split("");
-    console.log(keywordChars);
-    start(keywordChars)
+    displayChars(keywordChars);
+    guessAction(keywordChars);
   });
 }
